@@ -587,5 +587,35 @@ tbody tr:hover {
     .page-header h1 {
         font-size: 28px;
     }
+.signup-option {
+    text-align: center;
+    margin-top: 22px;
+}
 
+.signup-option p {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.signup-btn {
+    display: inline-block;
+    padding: 11px 20px;
+    background: transparent;
+    color: #60a5fa;
+    border: 1px solid #60a5fa;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
 }
