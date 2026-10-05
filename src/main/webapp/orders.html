@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Inventory - WarehousePro</title>
+    <title>Orders - WarehousePro</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -33,15 +33,13 @@
 
     <nav>
 
-        <a href="warehose.html">Home</a>
+        <a href="warehouse.html">Home</a>
 
         <a href="products.html">Products</a>
 
-        <a href="orders.html">Orders</a>
+        <a href="orders.html" class="active">Orders</a>
 
-        <a href="inventory.html" class="active">
-            Inventory
-        </a>
+        <a href="inventory.html">Inventory</a>
 
         <a href="customers.html">Customers</a>
 
@@ -67,10 +65,10 @@
 
         <div>
 
-            <h1>Inventory</h1>
+            <h1>Orders</h1>
 
             <p>
-                Track your warehouse stock.
+                Create and manage customer orders.
             </p>
 
         </div>
@@ -78,9 +76,9 @@
 
         <button
             class="primary-btn"
-            onclick="showForm('inventoryForm')">
+            onclick="showForm('orderForm')">
 
-            + Add Stock
+            + Create Order
 
         </button>
 
@@ -90,43 +88,52 @@
 
     <div
         class="form-box hidden"
-        id="inventoryForm">
+        id="orderForm">
 
-        <h2>Add Inventory</h2>
+        <h2>Create Order</h2>
 
 
-        <form onsubmit="addInventory(event)">
+        <form onsubmit="addOrder(event)">
 
 
             <input
                 type="text"
-                id="inventoryProduct"
-                placeholder="Product Name"
+                id="orderCustomer"
+                placeholder="Customer Name"
                 required
             >
 
 
             <input
                 type="number"
-                id="inventoryQuantity"
-                placeholder="Quantity"
+                id="orderAmount"
+                placeholder="Order Amount"
                 required
             >
 
 
-            <input
-                type="text"
-                id="inventoryLocation"
-                placeholder="Storage Location"
-                required
-            >
+            <select id="orderStatus">
+
+                <option value="Pending">
+                    Pending
+                </option>
+
+                <option value="Processing">
+                    Processing
+                </option>
+
+                <option value="Completed">
+                    Completed
+                </option>
+
+            </select>
 
 
             <button
                 class="primary-btn"
                 type="submit">
 
-                Save Inventory
+                Save Order
 
             </button>
 
@@ -134,7 +141,7 @@
             <button
                 type="button"
                 class="cancel-btn"
-                onclick="hideForm('inventoryForm')">
+                onclick="hideForm('orderForm')">
 
                 Cancel
 
@@ -148,7 +155,7 @@
 
     <div class="table-box">
 
-        <h2>Inventory List</h2>
+        <h2>Order List</h2>
 
 
         <table>
@@ -159,11 +166,11 @@
 
                     <th>ID</th>
 
-                    <th>Product</th>
+                    <th>Customer</th>
 
-                    <th>Quantity</th>
+                    <th>Amount</th>
 
-                    <th>Location</th>
+                    <th>Status</th>
 
                     <th>Action</th>
 
@@ -172,12 +179,12 @@
             </thead>
 
 
-            <tbody id="inventoryTable">
+            <tbody id="orderTable">
 
                 <tr>
 
                     <td colspan="5">
-                        Loading inventory...
+                        Loading orders...
                     </td>
 
                 </tr>
@@ -195,7 +202,7 @@
 <script src="app.js"></script>
 
 <script>
-    loadInventory();
+    loadOrders();
 </script>
 
 

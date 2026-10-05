@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Warehouses - WarehousePro</title>
+    <title>Customers - WarehousePro</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -33,7 +33,7 @@
 
     <nav>
 
-        <a href="warehose.html">Home</a>
+        <a href="warehouse.html">Home</a>
 
         <a href="products.html">Products</a>
 
@@ -41,11 +41,11 @@
 
         <a href="inventory.html">Inventory</a>
 
-        <a href="customers.html">Customers</a>
-
-        <a href="warehouses.html" class="active">
-            Warehouses
+        <a href="customers.html" class="active">
+            Customers
         </a>
+
+        <a href="warehouses.html">Warehouses</a>
 
         <a href="dispatch.html">Dispatch</a>
 
@@ -67,10 +67,10 @@
 
         <div>
 
-            <h1>Warehouses</h1>
+            <h1>Customers</h1>
 
             <p>
-                Manage warehouse locations.
+                Manage customer information.
             </p>
 
         </div>
@@ -78,9 +78,9 @@
 
         <button
             class="primary-btn"
-            onclick="showForm('warehouseForm')">
+            onclick="showForm('customerForm')">
 
-            + Add Warehouse
+            + Add Customer
 
         </button>
 
@@ -90,34 +90,42 @@
 
     <div
         class="form-box hidden"
-        id="warehouseForm">
+        id="customerForm">
 
-        <h2>Add Warehouse</h2>
+        <h2>Add Customer</h2>
 
 
-        <form onsubmit="addWarehouse(event)">
+        <form onsubmit="addCustomer(event)">
 
 
             <input
                 type="text"
-                id="warehouseName"
-                placeholder="Warehouse Name"
+                id="customerName"
+                placeholder="Customer Name"
+                required
+            >
+
+
+            <input
+                type="email"
+                id="customerEmail"
+                placeholder="Email"
                 required
             >
 
 
             <input
                 type="text"
-                id="warehouseLocation"
-                placeholder="Location"
+                id="customerPhone"
+                placeholder="Phone Number"
                 required
             >
 
 
             <input
-                type="number"
-                id="warehouseCapacity"
-                placeholder="Capacity"
+                type="text"
+                id="customerAddress"
+                placeholder="Address"
                 required
             >
 
@@ -126,7 +134,7 @@
                 class="primary-btn"
                 type="submit">
 
-                Save Warehouse
+                Save Customer
 
             </button>
 
@@ -134,7 +142,7 @@
             <button
                 type="button"
                 class="cancel-btn"
-                onclick="hideForm('warehouseForm')">
+                onclick="hideForm('customerForm')">
 
                 Cancel
 
@@ -148,7 +156,7 @@
 
     <div class="table-box">
 
-        <h2>Warehouse List</h2>
+        <h2>Customer List</h2>
 
 
         <table>
@@ -161,9 +169,11 @@
 
                     <th>Name</th>
 
-                    <th>Location</th>
+                    <th>Email</th>
 
-                    <th>Capacity</th>
+                    <th>Phone</th>
+
+                    <th>Address</th>
 
                     <th>Action</th>
 
@@ -172,12 +182,12 @@
             </thead>
 
 
-            <tbody id="warehouseTable">
+            <tbody id="customerTable">
 
                 <tr>
 
-                    <td colspan="5">
-                        Loading warehouses...
+                    <td colspan="6">
+                        Loading customers...
                     </td>
 
                 </tr>
@@ -195,7 +205,7 @@
 <script src="app.js"></script>
 
 <script>
-    loadWarehouses();
+    loadCustomers();
 </script>
 
 

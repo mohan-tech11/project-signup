@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +53,7 @@
             </p>
 
 
-            <form onsubmit="createAdmin(event)">
+           <form action="signup" method="post">
 
 
                 <!-- Admin Name -->
@@ -68,6 +67,7 @@
                     <input
                         type="text"
                         id="adminName"
+                        name="adminName"
                         placeholder="Enter admin name"
                         required
                     >
@@ -82,10 +82,10 @@
                     <label for="adminId">
                         Admin email ID
                     </label>
-
                     <input
                         type="email"
-                        id="admin emailId"
+                        id="adminEmailId"
+                        name="adminEmailId"
                         placeholder="Enter admin email ID"
                         required
                     >
@@ -104,6 +104,7 @@
                     <input
                         type="tel"
                         id="phone"
+                        name="phone"
                         placeholder="Enter phone number"
                         maxlength="10"
                         required
@@ -123,6 +124,7 @@
                     <input
                         type="password"
                         id="password"
+                        name="password"
                         placeholder="Create a password"
                         required
                     >
@@ -175,8 +177,8 @@
             const name =
                 document.getElementById("adminName").value;
 
-            const adminId =
-                document.getElementById("adminId").value;
+            const adminEmailId =
+                document.getElementById("adminEmailId").value;
 
             const phone =
                 document.getElementById("phone").value;

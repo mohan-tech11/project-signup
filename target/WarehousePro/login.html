@@ -412,24 +412,23 @@
         </p>
 
 
-        <form onsubmit="loginUser(event)">
+<form action="login" method="post">
 
+          <div class="input-group">
 
-            <div class="input-group">
+    <label for="email">
+        Admin Email
+    </label>
 
-                <label for="AdminUsername">
-                    Admin Username
-                </label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your admin email"
+        required
+    >
 
-                <input
-                    type="text"
-                    id="AdminUsername"
-                    placeholder="Enter your admin username"
-                    required
-                >
-
-            </div>
-
+</div>
 
             <div class="input-group">
 
@@ -440,6 +439,7 @@
                 <input
                     type="password"
                     id="password"
+                    name="password"
                     placeholder="Enter your password"
                     required
                 >
@@ -447,19 +447,19 @@
             </div>
 
 
-            <button
-                type="submit"
-                class="login-submit">
-
-          Login Dashboard
-            </button>
+           <button 
+             type="submit" 
+            class="login-submit">
+           Login
+</button>
 
             <div class="signup-option">
 
     <p>New administrator?</p>
 
-    <a href="signin.html" class="signup-btn">
-        Create New Admin Account
+    <a href="signup.html" class="signup-btn">
+
+       Create New Admin Account
             
         
     </a>
@@ -474,14 +474,6 @@
 
         </form>
 
-
-        <a
-            href="warehouse.html"
-            class="back-home">
-
-            ← Back to Home
-
-        </a>
 
     </div>
 

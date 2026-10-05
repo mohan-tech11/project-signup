@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Inventory - WarehousePro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">📦</div>
+
+        <span>
+            Warehouse<span class="blue">Pro</span>
+        </span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="warehouse.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="orders.html">Orders</a>
+
+        <a href="inventory.html" class="active">
+            Inventory
+        </a>
+
+        <a href="customers.html">Customers</a>
+
+        <a href="warehouses.html">Warehouses</a>
+
+        <a href="dispatch.html">Dispatch</a>
+
+    </nav>
+
+
+    <a href="login.html" class="login-btn">
+        👈logout
+    </a>
+
+</header>
+
+
+
+<main class="page">
+
+
+    <div class="page-header">
+
+        <div>
+
+            <h1>Inventory</h1>
+
+            <p>
+                Track your warehouse stock.
+            </p>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            onclick="showForm('inventoryForm')">
+
+            + Add Stock
+
+        </button>
+
+    </div>
+
+
+
+    <div
+        class="form-box hidden"
+        id="inventoryForm">
+
+        <h2>Add Inventory</h2>
+
+
+        <form onsubmit="addInventory(event)">
+
+
+            <input
+                type="text"
+                id="inventoryProduct"
+                placeholder="Product Name"
+                required
+            >
+
+
+            <input
+                type="number"
+                id="inventoryQuantity"
+                placeholder="Quantity"
+                required
+            >
+
+
+            <input
+                type="text"
+                id="inventoryLocation"
+                placeholder="Storage Location"
+                required
+            >
+
+
+            <button
+                class="primary-btn"
+                type="submit">
+
+                Save Inventory
+
+            </button>
+
+
+            <button
+                type="button"
+                class="cancel-btn"
+                onclick="hideForm('inventoryForm')">
+
+                Cancel
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+
+    <div class="table-box">
+
+        <h2>Inventory List</h2>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Product</th>
+
+                    <th>Quantity</th>
+
+                    <th>Location</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="inventoryTable">
+
+                <tr>
+
+                    <td colspan="5">
+                        Loading inventory...
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</main>
+
+
+<script src="app.js"></script>
+
+<script>
+    loadInventory();
+</script>
+
+
+</body>
+
+</html>

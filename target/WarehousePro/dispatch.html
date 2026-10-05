@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Orders - WarehousePro</title>
+    <title>Dispatch - WarehousePro</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -33,11 +33,11 @@
 
     <nav>
 
-        <a href="warehose.html">Home</a>
+        <a href="warehouse.html">Home</a>
 
         <a href="products.html">Products</a>
 
-        <a href="orders.html" class="active">Orders</a>
+        <a href="orders.html">Orders</a>
 
         <a href="inventory.html">Inventory</a>
 
@@ -45,7 +45,9 @@
 
         <a href="warehouses.html">Warehouses</a>
 
-        <a href="dispatch.html">Dispatch</a>
+        <a href="dispatch.html" class="active">
+            Dispatch
+        </a>
 
     </nav>
 
@@ -65,10 +67,10 @@
 
         <div>
 
-            <h1>Orders</h1>
+            <h1>Dispatch</h1>
 
             <p>
-                Create and manage customer orders.
+                Manage package dispatch and shipments.
             </p>
 
         </div>
@@ -76,9 +78,9 @@
 
         <button
             class="primary-btn"
-            onclick="showForm('orderForm')">
+            onclick="showForm('dispatchForm')">
 
-            + Create Order
+            + Add Dispatch
 
         </button>
 
@@ -88,42 +90,50 @@
 
     <div
         class="form-box hidden"
-        id="orderForm">
+        id="dispatchForm">
 
-        <h2>Create Order</h2>
-
-
-        <form onsubmit="addOrder(event)">
+        <h2>Add Dispatch</h2>
 
 
-            <input
-                type="text"
-                id="orderCustomer"
-                placeholder="Customer Name"
-                required
-            >
+        <form onsubmit="addDispatch(event)">
 
 
             <input
                 type="number"
-                id="orderAmount"
-                placeholder="Order Amount"
+                id="dispatchOrder"
+                placeholder="Order ID"
                 required
             >
 
 
-            <select id="orderStatus">
+            <input
+                type="text"
+                id="dispatchCarrier"
+                placeholder="Delivery Carrier"
+                required
+            >
 
-                <option value="Pending">
-                    Pending
+
+            <input
+                type="text"
+                id="dispatchTracking"
+                placeholder="Tracking Number"
+                required
+            >
+
+
+            <select id="dispatchStatus">
+
+                <option value="Ready">
+                    Ready
                 </option>
 
-                <option value="Processing">
-                    Processing
+                <option value="Shipped">
+                    Shipped
                 </option>
 
-                <option value="Completed">
-                    Completed
+                <option value="Delivered">
+                    Delivered
                 </option>
 
             </select>
@@ -133,7 +143,7 @@
                 class="primary-btn"
                 type="submit">
 
-                Save Order
+                Save Dispatch
 
             </button>
 
@@ -141,7 +151,7 @@
             <button
                 type="button"
                 class="cancel-btn"
-                onclick="hideForm('orderForm')">
+                onclick="hideForm('dispatchForm')">
 
                 Cancel
 
@@ -155,7 +165,7 @@
 
     <div class="table-box">
 
-        <h2>Order List</h2>
+        <h2>Dispatch List</h2>
 
 
         <table>
@@ -166,9 +176,11 @@
 
                     <th>ID</th>
 
-                    <th>Customer</th>
+                    <th>Order ID</th>
 
-                    <th>Amount</th>
+                    <th>Carrier</th>
+
+                    <th>Tracking</th>
 
                     <th>Status</th>
 
@@ -179,12 +191,12 @@
             </thead>
 
 
-            <tbody id="orderTable">
+            <tbody id="dispatchTable">
 
                 <tr>
 
-                    <td colspan="5">
-                        Loading orders...
+                    <td colspan="6">
+                        Loading dispatches...
                     </td>
 
                 </tr>
@@ -202,7 +214,7 @@
 <script src="app.js"></script>
 
 <script>
-    loadOrders();
+    loadDispatches();
 </script>
 
 

@@ -538,11 +538,22 @@ tbody tr:hover {
 
     font-size: 14px;
 }
+a{
+    color: #f6f5f5f0;
 
+}
+ .signup-btn:hover{
+    color: #0955c2;
+ }
+ p{
+    margin-top: 25px;
+        margin-bottom: 10px;
+
+ }
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 100px) {
 
     .navbar nav {
         gap: 10px;

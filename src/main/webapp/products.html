@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - WarehousePro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">📦</div>
+        <span>Warehouse<span class="blue">Pro</span></span>
+    </div>
+
+    <nav>
+        <a href="warehouse.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="orders.html">Orders</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="customers.html">Customers</a>
+        <a href="warehouses.html">Warehouses</a>
+        <a href="dispatch.html">Dispatch</a>
+    </nav>
+
+    <a href="login.html" class="login-btn">👈logout</a>
+
+</header>
+
+
+<main class="page">
+
+    <div class="page-header">
+        <div>
+            <h1>Products</h1>
+            <p>Manage your warehouse products.</p>
+        </div>
+
+        <button class="primary-btn" onclick="showForm('productForm')">
+            + Add Product
+        </button>
+    </div>
+
+
+    <div class="form-box hidden" id="productForm">
+
+        <h2>Add Product</h2>
+
+        <form onsubmit="addProduct(event)">
+
+            <input
+                type="text"
+                id="productName"
+                placeholder="Product Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="sku"
+                placeholder="SKU"
+                required
+            >
+
+            <input
+                type="number"
+                id="productPrice"
+                placeholder="Price"
+                required
+            >
+
+            <input
+                type="number"
+                id="productQuantity"
+                placeholder="Quantity"
+                required
+            >
+
+            <button class="primary-btn" type="submit">
+                Save Product
+            </button>
+
+            <button
+                type="button"
+                class="cancel-btn"
+                onclick="hideForm('productForm')">
+                Cancel
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div class="table-box">
+
+        <h2>Product List</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>SKU</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="productTable">
+
+                <tr>
+                    <td colspan="6">Loading products...</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+<script src="app.js"></script>
+
+<script>
+    loadProducts();
+</script>
+
+</body>
+</html>

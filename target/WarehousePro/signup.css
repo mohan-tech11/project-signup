@@ -231,6 +231,7 @@
 }
 
 
+
 /* Create Account Button */
 
 .create-btn {
@@ -308,7 +309,7 @@
 
 .back-login:hover {
 
-    color: white;
+    color: rgba(218, 139, 3, 0.445);
 
 }
 
