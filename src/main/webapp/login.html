@@ -443,7 +443,7 @@
                     placeholder="Enter your password"
                     required
                 >
-
+              <button type="button" onclick="togglePassword()">Show</button>
             </div>
 
 
@@ -486,3 +486,17 @@
 </body>
 
 </html>
+<script>
+function togglePassword() {
+    const password = document.getElementById("password");
+    const button = event.target;
+
+    if (password.type === "password") {
+        password.type = "text";
+        button.textContent = "Hide";
+    } else {
+        password.type = "password";
+        button.textContent = "Show";
+    }
+}
+</script>
