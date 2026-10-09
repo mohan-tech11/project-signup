@@ -632,5 +632,8 @@ footer {
     .hero-buttons {
         flex-direction: column;
     }
+    .hidden {
+    display: none;
+}
 
 }

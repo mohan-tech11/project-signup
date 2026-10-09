@@ -338,15 +338,7 @@
             }
            
         }
-        .remember-me {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-.remember-me input {
-    margin-right: 6px;
-}
-
+      
     </style>
 
 </head>
@@ -451,13 +443,7 @@
                     placeholder="Enter your password"
                     required
                 >
-              <button type="button" onclick="togglePassword()">Show</button>
-              <div class="remember-me">
-    <label>
-        <input type="checkbox" id="rememberMe">
-        Remember me
-    </label>
-</div>
+             
             </div>
 
 
@@ -500,17 +486,3 @@
 </body>
 
 </html>
-<script>
-function togglePassword() {
-    const password = document.getElementById("password");
-    const button = event.target;
-
-    if (password.type === "password") {
-        password.type = "text";
-        button.textContent = "Hide";
-    } else {
-        password.type = "password";
-        button.textContent = "Show";
-    }
-}
-</script>

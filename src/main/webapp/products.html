@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Products - WarehousePro</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,74 +29,100 @@
         <a href="dispatch.html">Dispatch</a>
     </nav>
 
-    <a href="login.html" class="login-btn">👈logout</a>
+    <a href="login.html" class="login-btn">👈 Logout</a>
 
 </header>
 
 
 <main class="page">
 
+    <!-- PAGE HEADER -->
+
     <div class="page-header">
+
         <div>
             <h1>Products</h1>
             <p>Manage your warehouse products.</p>
         </div>
 
-        <button class="primary-btn" onclick="showForm('productForm')">
+        <button
+            class="primary-btn"
+            onclick="showForm('productForm')">
+
             + Add Product
+
         </button>
+
     </div>
 
+
+    <!-- ADD PRODUCT FORM -->
 
     <div class="form-box hidden" id="productForm">
 
         <h2>Add Product</h2>
 
-        <form onsubmit="addProduct(event)">
+        <form action="addProduct" method="post">
 
             <input
                 type="text"
-                id="productName"
+                name="productName"
                 placeholder="Product Name"
                 required
             >
 
             <input
                 type="text"
-                id="sku"
+                name="sku"
                 placeholder="SKU"
                 required
             >
 
             <input
+                type="text"
+                name="category"
+                placeholder="Category"
+            >
+
+            <input
                 type="number"
-                id="productPrice"
+                name="price"
                 placeholder="Price"
+                step="0.01"
                 required
             >
 
             <input
                 type="number"
-                id="productQuantity"
+                name="quantity"
                 placeholder="Quantity"
+                min="0"
                 required
             >
 
-            <button class="primary-btn" type="submit">
+            <button
+                class="primary-btn"
+                type="submit">
+
                 Save Product
+
             </button>
 
             <button
                 type="button"
                 class="cancel-btn"
                 onclick="hideForm('productForm')">
+
                 Cancel
+
             </button>
 
         </form>
 
     </div>
 
+
+    <!-- PRODUCT LIST -->
 
     <div class="table-box">
 
@@ -102,20 +131,26 @@
         <table>
 
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Product Name</th>
-                    <th>SKU</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>SKU</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+</thead>
+
 
             <tbody id="productTable">
 
                 <tr>
-                    <td colspan="6">Loading products...</td>
+
+                    <td colspan="7">
+                        Loading products...
+                    </td>
+
                 </tr>
 
             </tbody>
@@ -130,7 +165,13 @@
 <script src="app.js"></script>
 
 <script>
-    loadProducts();
+
+    window.addEventListener("load", function () {
+
+        loadProducts();
+
+    });
+
 </script>
 
 </body>
